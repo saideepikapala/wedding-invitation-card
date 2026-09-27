@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ram & Seta | Wedding Invitation</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 12px;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(ellipse at center, #6e1529, #210715 75%);
+    color: #fff5d0;
+}
+
+/* Glowing background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 15% 20%, #ffbf0030, transparent 25%),
+      radial-gradient(circle at 85% 80%, #ff416430, transparent 30%);
+}
+
+/* Main invitation */
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    min-height: 900px;
+    overflow: hidden;
+    text-align: center;
+    padding: 35px 25px 200px;
+    border: 3px solid #e6bd63;
+    border-radius: 220px 220px 22px 22px;
+    background:
+      linear-gradient(180deg, #74172bdf, #370b20ed 70%),
+      #581027;
+    box-shadow:
+      0 0 20px #ffcf5c88,
+      0 0 70px #ffb52b33,
+      inset 0 0 35px #ffd66b20;
+    animation: cardGlow 3s infinite alternate;
+}
+
+@keyframes cardGlow {
+    from { box-shadow: 0 0 20px #ffcf5c66, inset 0 0 25px #ffd66b15; }
+    to { box-shadow: 0 0 45px #ffcf5caa, inset 0 0 40px #ffd66b30; }
+}
+
+/* Decorative border */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid #f5d58a;
+    border-radius: 210px 210px 15px 15px;
+    pointer-events: none;
+}
+
+/* Floral decorations */
+.flower {
+    position: absolute;
+    font-size: 30px;
+    animation: flowerFloat 5s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px #ffbd62);
+}
+
+.f1 { top: 70px; left: 35px; }
+.f2 { top: 130px; right: 30px; animation-delay: 1s; }
+.f3 { top: 340px; left: 25px; animation-delay: 2s; }
+.f4 { top: 350px; right: 25px; animation-delay: 1.5s; }
+.f5 { bottom: 240px; left: 60px; animation-delay: .5s; }
+.f6 { bottom: 240px; right: 60px; animation-delay: 2.5s; }
+
+@keyframes flowerFloat {
+    0%, 100% { transform: translateY(0) rotate(-8deg); }
+    50% { transform: translateY(-15px) rotate(12deg); }
+}
+
+/* Text */
+.om {
+    font-size: 48px;
+    color: #ffdb78;
+    margin-bottom: 5px;
+    text-shadow: 0 0 15px #ffd15a;
+    animation: shine 2s infinite alternate;
+}
+
+@keyframes shine {
+    from { text-shadow: 0 0 8px #ffd15a; }
+    to { text-shadow: 0 0 25px #fff0a0, 0 0 45px #ffb300; }
+}
+
+.invite {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 4px;
+    font-size: 15px;
+    color: #ffe9b0;
+    margin-top: 10px;
+}
+
+.subtitle {
+    margin-top: 15px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #f8dca0;
+}
+
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(55px, 10vw, 82px);
+    line-height: 1.2;
+    color: #ffdc83;
+    margin: 15px 0;
+    text-shadow: 0 0 15px #ffb52b88;
+}
+
+.ampersand {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    color: #fff4d0;
+    margin: 4px 0;
+}
+
+.divider {
+    width: 180px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #f8d77c, transparent);
+    margin: 20px auto;
+}
+
+.couple-frame {
+    width: min(290px, 85%);
+    height: 250px;
+    margin: 22px auto;
+    padding: 7px;
+    border: 2px solid #f3d17b;
+    border-radius: 150px 150px 20px 20px;
+    background: #e7bc5d;
+    box-shadow: 0 0 25px #ffcf5c55;
+    overflow: hidden;
+    animation: imageGlow 3s infinite alternate;
+}
+
+@keyframes imageGlow {
+    from { box-shadow: 0 0 12px #ffcf5c55; }
+    to { box-shadow: 0 0 30px #ffcf5cbb; }
+}
+
+.couple-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: inherit;
+}
+
+.message {
+    max-width: 480px;
+    margin: 10px auto 20px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #ffe9c3;
+}
+
+.details {
+    margin: 20px auto;
+    padding: 20px 10px;
+    max-width: 450px;
+    border-top: 1px solid #eacb77;
+    border-bottom: 1px solid #eacb77;
+}
+
+.detail {
+    margin: 13px 0;
+    font-size: 15px;
+    color: #fff0cc;
+}
+
+.detail span {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #e9c36e;
+    margin-bottom: 5px;
+}
+
+.location {
+    font-size: 23px;
+    color: #ffdc83;
+    font-family: 'Cinzel', serif;
+}
+
+.blessing {
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    color: #ffe4a0;
+    margin-top: 20px;
+}
+
+/* Coconut trees */
+.tree {
+    position: absolute;
+    bottom: 0;
+    font-size: 95px;
+    transform-origin: bottom center;
+    animation: sway 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px #ffb84d55);
+    z-index: 2;
+}
+
+.tree-left {
+    left: -5px;
+}
+
+.tree-right {
+    right: -5px;
+    animation-delay: -2s;
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg); }
+}
+
+/* Falling petals */
+.petal {
+    position: fixed;
+    top: -30px;
+    z-index: 10;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Twinkling stars */
+.star {
+    position: absolute;
+    color: #ffe89a;
+    animation: twinkle 2s infinite alternate;
+}
+
+.s1 { top: 190px; left: 20%; }
+.s2 { top: 270px; right: 18%; animation-delay: .7s; }
+.s3 { top: 430px; left: 15%; animation-delay: 1.2s; }
+.s4 { top: 470px; right: 15%; animation-delay: .4s; }
+
+@keyframes twinkle {
+    from { opacity: .2; transform: scale(.7); }
+    to { opacity: 1; transform: scale(1.3); }
+}
+
+.footer {
+    margin-top: 15px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #e9cb85;
+}
+
+@media (max-width: 480px) {
+    .card {
+        min-height: 850px;
+        padding: 35px 17px 170px;
+        border-radius: 150px 150px 18px 18px;
+    }
+
+    .card::before {
+        border-radius: 140px 140px 12px 12px;
+    }
+
+    .om { font-size: 38px; }
+    .invite { font-size: 12px; letter-spacing: 2px; }
+    .couple-frame { height: 220px; }
+    .tree { font-size: 65px; }
+    .flower { font-size: 23px; }
+    .detail { font-size: 13px; }
+    .message { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main class="card">
+
+    <!-- Floating flowers -->
+    <div class="flower f1">🌺</div>
+    <div class="flower f2">🌸</div>
+    <div class="flower f3">🌼</div>
+    <div class="flower f4">🌺</div>
+    <div class="flower f5">🌷</div>
+    <div class="flower f6">🌸</div>
+
+    <!-- Sparkles -->
+    <div class="star s1">✦</div>
+    <div class="star s2">✧</div>
+    <div class="star s3">✦</div>
+    <div class="star s4">✧</div>
+
+    <div class="om">ॐ</div>
+
+    <p class="invite">॥ WEDDING INVITATION ॥</p>
+
+    <p class="subtitle">
+        WITH THE BLESSINGS OF GOD & OUR FAMILIES
+    </p>
+
+    <div class="divider"></div>
+
+    <p class="message">
+        Two hearts, two souls, and one beautiful journey.
+        With immense joy, we invite you to celebrate
+        the beginning of our forever.
+    </p>
+
+    <div class="names">
+        Ram
+        <span class="ampersand">&amp;</span>
+        Seta
+    </div>
+
+    <div class="couple-frame">
+        <img
+          src="https://png.pngtree.com/png-clipart/20250310/original/pngtree-adorable-cartoon-wedding-couple-traditional-indian-marriage-attire-png-image_20635153.png"
+          alt="Traditional Indian bride and groom"
+          onerror="this.style.display='none'; this.parentElement.innerHTML += '<div style=&quot;padding:60px 5px;color:#6e1529;font-size:14px&quot;>Ram ❤️ Seta<br>Wedding Day</div>';"
+        >
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="message">
+        Your presence and blessings will make our special
+        day even more memorable. Join us as we begin
+        our beautiful journey together.
+    </p>
+
+    <section class="details">
+
+        <div class="detail">
+            <span>THE WEDDING DATE</span>
+            Sunday, 27 September 2026
+        </div>
+
+        <div class="detail">
+            <span>THE AUSPICIOUS TIME</span>
+            10:30 PM
+        </div>
+
+        <div class="detail">
+            <span>VENUE</span>
+            <div class="location">Eluru</div>
+            Andhra Pradesh, India
+        </div>
+
+    </section>
+
+    <p class="blessing">With love &amp; blessings</p>
+
+    <p class="footer">RAM ♥ SETA · FOREVER BEGINS</p>
+
+    <!-- Animated coconut trees -->
+    <div class="tree tree-left">🌴</div>
+    <div class="tree tree-right">🌴</div>
+
+</main>
+
+<script>
+/* Create a gentle shower of flower petals */
+const petals = ["🌸", "🌺", "🌼", "💮"];
+
+function createPetal() {
+    const petal = document.createElement("span");
+    petal.className = "petal";
+    petal.textContent = petals[
+        Math.floor(Math.random() * petals.length)
+    ];
+
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.fontSize = (12 + Math.random() * 15) + "px";
+    petal.style.animationDuration = (5 + Math.random() * 7) + "s";
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => petal.remove(), 13000);
+}
+
+setInterval(createPetal, 350);
+
+/* Add extra golden sparkles */
+function createSparkle() {
+    const sparkle = document.createElement("span");
+
+    sparkle.textContent = "✦";
+    sparkle.style.position = "fixed";
+    sparkle.style.left = Math.random() * 100 + "vw";
+    sparkle.style.top = Math.random() * 100 + "vh";
+    sparkle.style.color = "#ffe9a0";
+    sparkle.style.fontSize = (8 + Math.random() * 12) + "px";
+    sparkle.style.pointerEvents = "none";
+    sparkle.style.zIndex = "5";
+    sparkle.style.textShadow = "0 0 10px #ffd45e";
+    sparkle.style.opacity = "0";
+
+    document.body.appendChild(sparkle);
+
+    sparkle.animate([
+        { opacity: 0, transform: "scale(0.3)" },
+        { opacity: 1, transform: "scale(1.4)" },
+        { opacity: 0, transform: "scale(0.3)" }
+    ], {
+        duration: 1800,
+        easing: "ease-in-out"
+    });
+
+    setTimeout(() => sparkle.remove(), 1900);
+}
+
+setInterval(createSparkle, 500);
+</script>
+
+</body>
+</html>
